@@ -50,13 +50,8 @@ _CheckTrainerBattle::
 	call FacingPlayerDistance_bc
 	jr nc, .next
 
-<<<<<<< HEAD
 ; ...within their sight range
 	ld hl, MAPOBJECT_SIGHT_RANGE
-=======
-; ...within their sight range...
-	ld hl, MAPOBJECT_RANGE
->>>>>>> 819558400954be513b3ad0cadfaad91388e415f8
 	add hl, de
 	ld a, [hl]
 	cp b
