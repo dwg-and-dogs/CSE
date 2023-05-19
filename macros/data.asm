@@ -81,21 +81,9 @@ MACRO dab ; dwb address, bank
 	endr
 ENDM
 
-MACRO dba_pic ; dbw bank, address
-	db BANK(\1) - PICS_FIX
-	dw \1
-ENDM
-
 MACRO bcd
 	rept _NARG
 		dn ((\1) % 100) / 10, (\1) % 10
 		shift
-	endr
-ENDM
-
-MACRO sine_table
-; \1 samples of sin(x) from x=0 to x<0.5 turns (pi radians)
-	for x, \1
-		dw sin(x * 0.5 / (\1))
 	endr
 ENDM
