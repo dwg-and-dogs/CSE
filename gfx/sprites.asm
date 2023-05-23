@@ -110,3 +110,4 @@ StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
 SECTION "Sprites 3", ROMX
 
 AnimPokeBallSpriteGFX::        INCBIN "gfx/sprites/anim_pokeball.2bpp"
+GiovanniSpriteGFX:: 			INCBIN "gfx/sprites/giovanni.2bpp"

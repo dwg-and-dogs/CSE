@@ -1,14 +1,31 @@
-INCLUDE "data/trainers/party_pointers.asm"
-
-Trainers:
 ; Trainer data structure:
-; - db "NAME@", TRAINERTYPE_* constant
+; - db "NAME@", TRAINERTYPE_* constants |ed together
 ; - 1 to 6 Pokémon:
-;    * for TRAINERTYPE_NORMAL:     db level, species
-;    * for TRAINERTYPE_MOVES:      db level, species, 4 moves
-;    * for TRAINERTYPE_ITEM:       db level, species, item
-;    * for TRAINERTYPE_ITEM_MOVES: db level, species, item, 4 moves
-; - db -1 ; end
+;    * in all cases:              db level, species
+;    * with TRAINERTYPE_NICKNAME: db "NICKNAME@"
+;    * with TRAINERTYPE_DVS:      db atk|def dv, spd|spc dv
+;    * with TRAINERTYPE_STAT_EXP: dw hp, atk, def, spd, spc
+;    * with TRAINERTYPE_ITEM:     db item
+;    * with TRAINERTYPE_MOVES:    db move 1, move 2, move 3, move 4
+;    (TRAINERTYPE_ITEM_MOVES is just TRAINERTYPE_ITEM | TRAINERTYPE_MOVES)
+; - db -1 
+
+;example: 
+;db "?@", TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP | TRAINERTYPE_ITEM_MOVES
+;	db  3, RATTATA
+;		db PERFECT_DV, $de ; atk|def, spd|spc
+;		dw $0040, $0060, $0020, $0040, $0000 ; hp, atk, def, spd, spc
+;		db NO_ITEM
+;		db TACKLE, TAIL_WHIP, BITE, NO_MOVE ; Bite is an egg move
+;	db  5, TOTODILE
+;		db ATKDEFDV_SHINY, SPDSPCDV_SHINY ; atk|def, spd|spc
+;		dw $0000, PERFECT_STAT_EXP, $0000, PERFECT_STAT_EXP, $0000 ; hp, atk, def, spd, spc
+;		db BERRY
+;		db SCRATCH, LEER, NO_MOVE, NO_MOVE
+;	db -1 ; end
+; end
+
+SECTION "Enemy Trainer Parties 1", ROMX
 
 FalknerGroup:
 	; FALKNER (1)
