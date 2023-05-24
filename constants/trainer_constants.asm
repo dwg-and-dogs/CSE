@@ -610,7 +610,8 @@ DEF KRIS EQU __trainer_class__
 	trainerclass EXECUTIVEF ; 37
 	const EXECUTIVEF_1
 	const EXECUTIVEF_2
-
+	const EXECUTIVEF_3 ;azalea
+	
 	trainerclass SAGE ; 38
 	const CHOW
 	const NICO
@@ -702,5 +703,10 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
+	
+	trainerclass GIOVANNI ; 44
+	const GIOVANNI_1
+	const GIOVANNI_2
+	const GIOVANNI_3
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

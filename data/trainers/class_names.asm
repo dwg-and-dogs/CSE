@@ -55,7 +55,7 @@ TrainerClassNames::
 	li "PSYCHIC"
 	li "PICNICKER"
 	li "CAMPER"
-	li "ROCKET"
+	li "EXECUTIVE"
 	li "SAGE"
 	li "MEDIUM"
 	li "BOARDER"
@@ -68,4 +68,5 @@ TrainerClassNames::
 	li "OFFICER"
 	li "ROCKET"
 	li "MYSTICALMAN"
+	li "BOSS"
 	assert_list_length NUM_TRAINER_CLASSES
