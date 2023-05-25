@@ -644,7 +644,7 @@ OakSpeech:
 	call RotateThreePalettesRight
 	xor a
 	ld [wCurPartySpecies], a
-	ld a, POKEMON_PROF
+	ld a, GIOVANNI
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
