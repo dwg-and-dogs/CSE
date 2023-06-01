@@ -63,7 +63,7 @@ NewGame:
 	ld [wDebugFlags], a
 	call ResetWRAM
 	call NewGame_ClearTilemapEtc
-	call AreYouABoyOrAreYouAGirl
+;	call AreYouABoyOrAreYouAGirl
 	call OakSpeech
 	call InitializeWorld
 
@@ -77,16 +77,16 @@ NewGame:
 	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
 
-AreYouABoyOrAreYouAGirl:
-	farcall Mobile_AlwaysReturnNotCarry ; mobile
-	jr c, .ok
-	farcall InitGender
-	ret
+;AreYouABoyOrAreYouAGirl:
+;	farcall Mobile_AlwaysReturnNotCarry ; mobile
+;	jr c, .ok
+;	farcall InitGender
+;	ret
 
-.ok
-	ld c, 0
-	farcall InitMobileProfile ; mobile
-	ret
+;.ok
+;	ld c, 0
+;	farcall InitMobileProfile ; mobile
+;	ret
 
 if DEF(_DEBUG)
 DebugRoom: ; unreferenced
@@ -683,7 +683,7 @@ if !DEF(_DEBUG)
 
 	xor a
 	ld [wCurPartySpecies], a
-	ld a, POKEMON_PROF
+	ld a, GIOVANNI
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 
@@ -785,7 +785,7 @@ NamePlayer:
 	ret
 
 .Chris:
-	db "CHRIS@@@@@@"
+	db "SILVER@@@@@"
 .Kris:
 	db "KRIS@@@@@@@"
 
