@@ -629,6 +629,13 @@ INCLUDE "data/phone/text/parry_callee.asm"
 INCLUDE "data/phone/text/erin_callee.asm"
 INCLUDE "data/phone/text/unused.asm"
 
+SECTION "New Phone Scripts", ROMX
+
+INCLUDE "engine/phone/scripts/dad_caller.asm"
+
+SECTION "New Phone Text", ROMX
+
+INCLUDE "data/phone/text/dad_caller.asm"
 
 SECTION "Miscellaneous Text", ROMX
 
