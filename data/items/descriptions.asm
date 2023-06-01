@@ -338,7 +338,7 @@ EscapeRopeDesc:
 
 RepelDesc:
 	db   "Repels weak #-"
-	next "MON for 100 steps.@"
+	next "MON"
 
 MaxElixerDesc:
 	db   "Fully restores the"
